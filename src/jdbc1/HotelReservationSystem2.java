@@ -167,8 +167,8 @@ public class HotelReservationSystem2 {
             String newContactNumber = scanner.next();
 
             String sql = "UPDATE reservations SET guest_name = '" + newGuestName + "', " +
-                    "room_number = " + newRoomNumber + ", " +
-                    "contact_number = '" + newContactNumber + "' " +
+                    "room_no = " + newRoomNumber + ", " +
+                    "contact_no = '" + newContactNumber + "' " +
                     "WHERE reservatiion_id = " + reservationId;
 
             try (Statement statement = connection.createStatement()) {
@@ -213,7 +213,7 @@ public class HotelReservationSystem2 {
 
     private static boolean reservationExists(Connection connection, int reservationId) {
         try {
-            String sql = "SELECT reservation_id FROM reservations WHERE reservation_id = " + reservationId;
+            String sql = "SELECT reservatiion_id FROM reservations WHERE reservatiion_id = " + reservationId;
 
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(sql)) {
